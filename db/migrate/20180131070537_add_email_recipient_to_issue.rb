@@ -1,6 +1,6 @@
 class AddEmailRecipientToIssue < ActiveRecord::Migration
   def change
-    change_table :issue do |i|
+    change_table :issues do |i|
       i.string    :recipient_email
     end
   end
