@@ -15,8 +15,7 @@ IssueQuery.send(:include, SendNotification::IssueQueryPatch)
 Issue.send(:include, SendNotification::IssuePatch)
 
 
-
-require 'send_notification/send_hooks'
+require_dependency 'send_notification/send_hooks'
 
 #SendNotification::ViewHooks
 #require_dependency 'issue_send_notification_patch'
