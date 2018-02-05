@@ -1,0 +1,10 @@
+<%= labelled_fields_for :issue, @issue do |f| %>
+  <div class="client_email_form_container">
+    <p class="client_email_form">
+      <% if @issue.safe_attribute? 'subject' %>
+      <p><%= f.text_field :recipient_email, :size => 80, :maxlength => 255 %></p>
+      <% end %>
+    </p>
+  </div>
+<% end %>
+
