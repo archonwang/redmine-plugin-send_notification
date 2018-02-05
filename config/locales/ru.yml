@@ -1,0 +1,4 @@
+# Russian strings go here for Rails i18n
+ru:
+  field_recipient_email: Email заказчика
+
