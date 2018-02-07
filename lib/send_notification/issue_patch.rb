@@ -17,7 +17,7 @@ module SendNotification
         after_save :check_before_send_recipient_email
 
         def check_before_send_recipient_email
-          unless recipient_email.empty?
+          unless recipient_email.blank?
 
             # Задача подверждена
             if notify? && (status_id_changed? && status_id == ISSUE_STATUS_CONFIRMED)
