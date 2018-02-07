@@ -1,6 +1,8 @@
 require 'roadie'
 
 class TechMailer < ActionMailer::Base
+  helper :application
+  include Redmine::I18n
 
   default from: 'no-reply@redmine.lvs.onpp'
 
@@ -9,21 +11,21 @@ class TechMailer < ActionMailer::Base
     @text = issue.subject
     @to = extract_email_to_array(issue.recipient_email)
     @issue = issue
-    mail to: @to, subject:"Задача поставлена в план"
+    mail to: @to, subject: "Задача включена в план"
   end
 
   def send_issue_change(issue)
     @text = issue.subject
     @to = extract_email_to_array(issue.recipient_email)
     @issue = issue
-    mail to: @to, subject:"Задача изменилась"
+    mail to: @to, subject: "Плановые сроки выполнения задачи изменились"
   end
 
   def send_issue_end(issue)
     @text = issue.subject
     @to = extract_email_to_array(issue.recipient_email)
     @issue = issue
-    mail to: @to, subject:"Задача завершена"
+    mail to: @to, subject: "Задача выполнена"
   end
 
   def extract_email_to_array(str)

@@ -1,1 +1,8 @@
-  Добпый день! Задача: "<%= @issue.subject%>" изменилась.
+Добрый день!
+
+Сроки выполнения по задаче "<%= @issue.subject %>" изменились.
+
+<% if @issue.start_date? && @issue.due_date? && (@issue.disabled_core_fields & %w(start_date due_date)).empty? %>
+    <p>Новая плановая дата начала выполнения: <%= format_date(@issue.start_date) %><br>
+      Новый плановый срок выполнения: <%= format_date(@issue.due_date) %></p>
+<% end %>

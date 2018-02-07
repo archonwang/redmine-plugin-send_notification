@@ -1,2 +1,8 @@
-<p>Добрый день! Задача: "<%= @issue.subject%>" принята в работу</p>
+<p>Добрый день!</p>
 
+<p>Задача №<%= @issue.id %> "<%= @issue.subject %>" принята в работу.</p>
+
+<% if @issue.start_date? && @issue.due_date? && (@issue.disabled_core_fields & %w(start_date due_date)).empty? %>
+    <p>Плановая дата начала выполнения: <b><%= format_date(@issue.start_date) %></b><br>
+      Плановый срок выполнения: <b><%= format_date(@issue.due_date) %></b></p>
+<% end %>
