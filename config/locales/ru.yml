@@ -2,3 +2,10 @@
 ru:
   field_recipient_email: Email заказчика
 
+  label_issue_status_confirmed: Задача подтверждена
+  label_issue_status_completed: Задача выполнена
+  label_issue_status_in_work: Задача в работе
+  label_issue_status_in_stop: Задача приостановлена
+
+
+
