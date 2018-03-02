@@ -4,8 +4,7 @@ class TechMailer < ActionMailer::Base
   helper :application
   include Redmine::I18n
 
-  default from: 'no-reply@redmine.lvs.onpp'
-
+  default from: Setting.mail_from
 
   def send_issue_accept(issue)
     @text = issue.subject
