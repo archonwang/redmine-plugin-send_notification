@@ -14,9 +14,9 @@ module SendNotification
         def check_before_send_recipient_email
           unless recipient_email.blank?
             # Task confirmed
-            TechMailer.send_issue_accept(self).deliver_now if issue_status_confirmed?
+            TechMailer.send_issue_confirmed(self).deliver_now if issue_status_confirmed?
             # Task Completed
-            TechMailer.send_issue_end(self).deliver_now if issue_status_completed?
+            TechMailer.send_issue_completed(self).deliver_now if issue_status_completed?
             # Task due date change
             TechMailer.send_issue_change(self).deliver_now if issue_change_dates?
           end

@@ -4,7 +4,7 @@ class TechMailer < ActionMailer::Base
   helper :application
   include Redmine::I18n
 
-  def send_issue_accept(issue)
+  def send_issue_confirmed(issue)
     @text = issue.subject
     @to = extract_email_to_array(issue.recipient_email)
     @issue = issue
@@ -18,7 +18,7 @@ class TechMailer < ActionMailer::Base
     mail to: @to, subject: "Плановые сроки выполнения задачи изменились", from: Setting.mail_from
   end
 
-  def send_issue_end(issue)
+  def send_issue_completed(issue)
     @text = issue.subject
     @to = extract_email_to_array(issue.recipient_email)
     @issue = issue
