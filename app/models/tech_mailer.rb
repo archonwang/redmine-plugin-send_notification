@@ -4,27 +4,25 @@ class TechMailer < ActionMailer::Base
   helper :application
   include Redmine::I18n
 
-  default from: Setting.mail_from
-
   def send_issue_accept(issue)
     @text = issue.subject
     @to = extract_email_to_array(issue.recipient_email)
     @issue = issue
-    mail to: @to, subject: "Задача включена в план"
+    mail to: @to, subject: "Задача включена в план", from: Setting.mail_from
   end
 
   def send_issue_change(issue)
     @text = issue.subject
     @to = extract_email_to_array(issue.recipient_email)
     @issue = issue
-    mail to: @to, subject: "Плановые сроки выполнения задачи изменились"
+    mail to: @to, subject: "Плановые сроки выполнения задачи изменились", from: Setting.mail_from
   end
 
   def send_issue_end(issue)
     @text = issue.subject
     @to = extract_email_to_array(issue.recipient_email)
     @issue = issue
-    mail to: @to, subject: "Задача выполнена"
+    mail to: @to, subject: "Задача выполнена", from: Setting.mail_from
   end
 
   def extract_email_to_array(str)
