@@ -7,5 +7,18 @@ ru:
   label_issue_status_in_work: Задача в работе
   label_issue_status_in_stop: Задача приостановлена
 
+  email_body_subject_issue_confirmed: Задача включена в план
+  email_body_subject_issuen_change: Плановые сроки выполнения задачи изменились
+  email_body_subject_issue_completed: Задача выполнена
+
+  email_body_greeting: Добрый день!
+  email_body_issue_confirmed_header: Задача №%{id} "%{subject}" принята в работу
+  email_body_issue_change_header: Сроки выполнения по задаче №%{id} "%{subject}" изменились
+  email_body_issue_completed_header: Задача №%{id} "%{subject}" выполнена
+  email_body_issue_start_date: Плановая дата начала выполнения
+  email_body_issue_due_date: Плановый срок выполнения
+  email_body_issue_new_start_date: Новая плановая дата начала выполнения
+  email_body_issue_new_due_date: Новый плановый срок выполнения
+
 
 

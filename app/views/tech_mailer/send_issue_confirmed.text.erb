@@ -1,8 +1,8 @@
-Добрый день!
+<%= l(:email_body_greeting)%>
 
-Задача "<%= @issue.subject %>" принята в работу.
+<%= l(:email_body_issue_confirmed_header, id: @issue.id, subject: @issue.subject)%>.
 
 <% if @issue.start_date? && @issue.due_date? && (@issue.disabled_core_fields & %w(start_date due_date)).empty? %>
-Плановая дата начала выполнения: <%= format_date(@issue.start_date) %>
-Плановый срок выполнения: <%= format_date(@issue.due_date) %></p>
+<%= l(:email_body_issue_start_date)%>: <%= format_date(@issue.start_date) %>
+<%= l(:email_body_issue_due_date)%>: <%= format_date(@issue.due_date) %>
 <% end %>
